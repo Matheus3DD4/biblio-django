@@ -5,8 +5,14 @@ description = ""
 authors = [
     {name = "Matheus Marques Gobetti", email = "gobetti.ifc@gmail.com"},
 ]
-dependencies = []
+dependencies = [
+    "django>=4.2.4",
+]
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
 
+[tool.pdm.dev-dependencies]
+dev = [
+    "black>=23.7.0",
+]

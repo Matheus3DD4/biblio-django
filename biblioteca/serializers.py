@@ -1,33 +1,33 @@
 from rest_framework.serializers import ModelSerializer
 
-from biblioteca.models import Categoria
+from biblioteca.models import Genre
 
-class CategoriaSerializer(ModelSerializer):
+class GenreSerializer(ModelSerializer):
     class Meta:
-        model = Categoria
+        model = Genre
         fields = "__all__"
 
-from biblioteca.models import Autor
+from biblioteca.models import Author
 
-class AutorSerializer(ModelSerializer):
+class AuthorSerializer(ModelSerializer):
     class Meta:
-        model = Autor
+        model = Author
         fields = "__all__"
 
-from biblioteca.models import Livro
+from biblioteca.models import Title
 
-class LivroSerializer(ModelSerializer):
+class TitleSerializer(ModelSerializer):
     class Meta:
-        model = Livro
+        model = Title
         fields = "__all__"
 
-class LivroDetailSerializer(ModelSerializer):
+class TitleDetailSerializer(ModelSerializer):
     class Meta:
-        model = Livro
+        model = Title
         fields = "__all__"
         depth = 1
 
-class LivroListSerializer(ModelSerializer):
+class TitleListSerializer(ModelSerializer):
     class Meta:
-        model = Livro
-        fields = ["id", "titulo", "autor"]
+        model = Title
+        fields = ["id", "title", "author"]

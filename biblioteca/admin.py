@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .models import Livro, Categoria, Autor
+from .models import Title, Genre, Author
 
-admin.site.register(Livro)
-admin.site.register(Categoria)
-admin.site.register(Autor)
+admin.site.register(Title)
+admin.site.register(Genre)
+admin.site.register(Author)

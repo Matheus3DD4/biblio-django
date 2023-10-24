@@ -3,12 +3,12 @@ from django.urls import include, path
 
 from rest_framework.routers import DefaultRouter
 
-from biblioteca.views import CategoriaViewSet, AutorViewSet, LivroViewSet
+from biblioteca.views import GenreViewSet, AuthorViewSet, TitleViewSet
 
 router = DefaultRouter()
-router.register(r"categorias", CategoriaViewSet)
-router.register(r"autores", AutorViewSet)
-router.register(r"livros", LivroViewSet)
+router.register(r"genres", GenreViewSet)
+router.register(r"authores", AuthorViewSet)
+router.register(r"titles", TitleViewSet)
 
 
 urlpatterns = [

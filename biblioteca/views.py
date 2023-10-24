@@ -1,22 +1,19 @@
 from rest_framework.viewsets import ModelViewSet
 
-from biblioteca.models import Categoria, Autor, Livro
-from biblioteca.serializers import CategoriaSerializer, AutorSerializer, LivroSerializer
+from biblioteca.models import Genre, Author, Title
+from biblioteca.serializers import GenreSerializer, AuthorSerializer, TitleSerializer
 
-class CategoriaViewSet(ModelViewSet):
-    queryset = Categoria.objects.all()
-    serializer_class = CategoriaSerializer
+class GenreViewSet(ModelViewSet):
+    queryset = Genre.objects.all()
+    serializer_class = GenreSerializer
 
-class AutorViewSet(ModelViewSet):
-    queryset = Autor.objects.all()
-    serializer_class = AutorSerializer
+class AuthorViewSet(ModelViewSet):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
 
-class LivroViewSet(ModelViewSet):
-    queryset = Livro.objects.all()
+class TitleViewSet(ModelViewSet):
+    queryset = Title.objects.all()
 
     def get_serializer_class(self):
         if self.action == "list":
-            return LivroListSerializer
-        elif self.action == "retrieve":
-            return LivroDetailSerializer
-        return LivroSerializer
+            return Title

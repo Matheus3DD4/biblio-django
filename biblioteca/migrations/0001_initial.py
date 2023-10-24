@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Autor",
+            name="Author",
             fields=[
                 (
                     "id",
@@ -26,12 +26,12 @@ class Migration(migrations.Migration):
                 ("email", models.EmailField(blank=True, max_length=254, null=True)),
             ],
             options={
-                "verbose_name": "Autor",
-                "verbose_name_plural": "Autores",
+                "verbose_name": "Author",
+                "verbose_name_plural": "Authors",
             },
         ),
         migrations.CreateModel(
-            name="Categoria",
+            name="Genre",
             fields=[
                 (
                     "id",
@@ -46,7 +46,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name="Livro",
+            name="Title",
             fields=[
                 (
                     "id",
@@ -59,19 +59,19 @@ class Migration(migrations.Migration):
                 ),
                 ("titulo", models.CharField(max_length=255)),
                 (
-                    "autor",
+                    "author",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        related_name="livros",
-                        to="biblioteca.autor",
+                        related_name="titles",
+                        to="biblioteca.author",
                     ),
                 ),
                 (
-                    "categoria",
+                    "genre",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        related_name="livros",
-                        to="biblioteca.categoria",
+                        related_name="titles",
+                        to="biblioteca.categori",
                     ),
                 ),
             ],

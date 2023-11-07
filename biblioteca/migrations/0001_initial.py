@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Author",
+            name="Autor",
             fields=[
                 (
                     "id",
@@ -23,15 +23,18 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("nome", models.CharField(max_length=255)),
-                ("email", models.EmailField(blank=True, max_length=254, null=True)),
+                (
+                    "email",
+                    models.EmailField(blank=True, max_length=254, null=True),
+                ),
             ],
             options={
-                "verbose_name": "Author",
-                "verbose_name_plural": "Authors",
+                "verbose_name": "Autor",
+                "verbose_name_plural": "Autores",
             },
         ),
         migrations.CreateModel(
-            name="Genre",
+            name="Categoria",
             fields=[
                 (
                     "id",
@@ -46,7 +49,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name="Title",
+            name="Titulo",
             fields=[
                 (
                     "id",
@@ -59,18 +62,18 @@ class Migration(migrations.Migration):
                 ),
                 ("titulo", models.CharField(max_length=255)),
                 (
-                    "author",
+                    "autor",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        related_name="titles",
-                        to="biblioteca.author",
+                        related_name="titulos",
+                        to="biblioteca.autor",
                     ),
                 ),
                 (
-                    "genre",
+                    "categoria",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        related_name="titles",
+                        related_name="titulos",
                         to="biblioteca.categori",
                     ),
                 ),

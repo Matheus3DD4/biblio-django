@@ -1,12 +1,14 @@
 from django.db import models
 
-class Genre(models.Model):
+
+class Categoria(models.Model):
     descricao = models.CharField(max_length=100)
 
     def __str__(self):
         return self.descricao
 
-class Author(models.Model):
+
+class Autor(models.Model):
     nome = models.CharField(max_length=255)
     email = models.EmailField(null=True, blank=True)
 
@@ -14,14 +16,18 @@ class Author(models.Model):
         return self.nome
 
     class Meta:
-        verbose_name = "Author"
-        verbose_name_plural = "Authors"
+        verbose_name = "Autor"
+        verbose_name_plural = "Autores"
 
-class Title(models.Model):
+
+class Titulo(models.Model):
     titulo = models.CharField(max_length=255)
-    genre = models.ForeignKey(Genre, on_delete=models.PROTECT, related_name="titles")
-    author = models.ForeignKey(Author, on_delete=models.PROTECT, related_name="titles")
+    categoria = models.ForeignKey(
+        Categoria, on_delete=models.PROTECT, related_name="titulos"
+    )
+    autor = models.ForeignKey(
+        Autor, on_delete=models.PROTECT, related_name="titulos"
+    )
 
     def __str__(self):
         return self.titulo
-

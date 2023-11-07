@@ -2,12 +2,13 @@
 name = ""
 version = ""
 description = ""
-authors = [
+autores = [
     {name = "Matheus Marques Gobetti", email = "gobetti.ifc@gmail.com"},
 ]
 dependencies = [
     "django>=4.2.6",
     "djangorestframework>=3.14.0",
+    "django-cors-headers>=4.3.0",
 ]
 requires-python = ">=3.10"
 readme = "README.md"
